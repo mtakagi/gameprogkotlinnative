@@ -12,7 +12,11 @@ kotlin {
         // mingwX64("native") // on Windows
         compilations["main"].cinterops {
             val sdl by creating {
-                includeDirs("/usr/local/include/SDL")
+                if (file("/usr/local/include/SDL").exists()) {
+                    includeDirs("/usr/local/include/SDL")
+                } else {
+                    includeDirs("/usr/local/include/SDL2")
+                }
                 includeDirs.headerFilterOnly("/usr/local/include")
             }
         }
