@@ -28,7 +28,7 @@ class Game {
             100,	// Top left y-coordinate of window
             1024,	// Width of window
             768,	// Height of window
-            SDL_WINDOW_SHOWN or SDL_WINDOW_ALLOW_HIGHDPI // Flags (0 for no flags set)
+            SDL_WINDOW_SHOWN // Flags (0 for no flags set)
         )
 
         if (window == null) {
